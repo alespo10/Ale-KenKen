@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Caricamento">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Blocco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Casella.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Griglia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Grafica.java" afterDir="false" />
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Sviluppo della Casella + Blocco">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Griglia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Griglia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -63,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1733395530967</updated>
       <workItem from="1733395532530" duration="739000" />
-      <workItem from="1733396498262" duration="847000" />
+      <workItem from="1733396498262" duration="1660000" />
+      <workItem from="1733413150804" duration="698000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -81,7 +81,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733396256110</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Sviluppo della Casella + Blocco">
+      <option name="closed" value="true" />
+      <created>1733397648915</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733397648915</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Caricamento" />
-    <option name="LAST_COMMIT_MESSAGE" value="Caricamento" />
+    <MESSAGE value="Sviluppo della Casella + Blocco" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sviluppo della Casella + Blocco" />
   </component>
 </project>
