@@ -7,7 +7,7 @@ public class Griglia{
     private final int dimensione;
     private final Casella[][] griglia;
     private final List<Blocco> blocchi;
-    private static final Random RANDOM = new Random();
+    private static final Random RANDOM = new Random();  // lo uso per generarmi la creazione random
 
     // Costruttore
     public Griglia(int dimensione) {
@@ -109,14 +109,17 @@ public class Griglia{
         }
     }
 
+    private List<Casella> generaBloccoAdiacente(int x, int y, boolean[][] visitato, Blocco.TipoVincolo tipoVincolo) {
+    }
+
     private void aggiungiBlocco(Blocco blocco) {
     }
 
     private Blocco creaBlocco(Blocco.TipoVincolo tipoVincolo, List<Casella> caselleBlocco) {
     }
+    public int getDimensione(){return dimensione;}
 
-    private List<Casella> generaBloccoAdiacente(int x, int y, boolean[][] visitato, Blocco.TipoVincolo tipoVincolo) {
-    }
+
 
     private Blocco.TipoVincolo scegliVincoloCasuale() {
         return null;
@@ -132,8 +135,7 @@ public class Griglia{
     }
 
 
-
-
+    public Casella getCella(int x,int y){ return griglia[x][y];}
 
 }
 
