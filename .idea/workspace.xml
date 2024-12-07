@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Sviluppo della Griglia (incompleto)">
-      <change afterPath="$PROJECT_DIR$/src/Model/Soluzione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/SoluzioneAbstract.java" afterDir="false" />
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Soluzione + SoluzioneAbstract (testare)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Griglia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Griglia.java" afterDir="false" />
     </list>
@@ -67,7 +65,8 @@
       <workItem from="1733396498262" duration="1660000" />
       <workItem from="1733413150804" duration="851000" />
       <workItem from="1733476429522" duration="19000" />
-      <workItem from="1733476460283" duration="1186000" />
+      <workItem from="1733476460283" duration="1231000" />
+      <workItem from="1733559209497" duration="433000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -101,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733413874617</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Soluzione + SoluzioneAbstract (testare)">
+      <option name="closed" value="true" />
+      <created>1733478515831</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733478515831</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +118,7 @@
     <MESSAGE value="Caricamento" />
     <MESSAGE value="Sviluppo della Casella + Blocco" />
     <MESSAGE value="Sviluppo della Griglia (incompleto)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sviluppo della Griglia (incompleto)" />
+    <MESSAGE value="Soluzione + SoluzioneAbstract (testare)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Soluzione + SoluzioneAbstract (testare)" />
   </component>
 </project>
