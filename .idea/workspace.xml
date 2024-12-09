@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Soluzione + SoluzioneAbstract (testare)">
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Blocco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Blocco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Casella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Casella.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Griglia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Griglia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Grafica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +44,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -66,7 +72,9 @@
       <workItem from="1733413150804" duration="851000" />
       <workItem from="1733476429522" duration="19000" />
       <workItem from="1733476460283" duration="1231000" />
-      <workItem from="1733559209497" duration="433000" />
+      <workItem from="1733559209497" duration="937000" />
+      <workItem from="1733582628726" duration="978000" />
+      <workItem from="1733670905325" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -108,7 +116,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733478515831</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare).">
+      <option name="closed" value="true" />
+      <created>1733559689524</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733559689524</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare).">
+      <option name="closed" value="true" />
+      <created>1733559694905</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733559694905</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +143,7 @@
     <MESSAGE value="Sviluppo della Casella + Blocco" />
     <MESSAGE value="Sviluppo della Griglia (incompleto)" />
     <MESSAGE value="Soluzione + SoluzioneAbstract (testare)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Soluzione + SoluzioneAbstract (testare)" />
+    <MESSAGE value="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare)." />
   </component>
 </project>

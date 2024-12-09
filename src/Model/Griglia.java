@@ -9,7 +9,6 @@ public class Griglia{
     private final List<Blocco> blocchi;
     private static final Random RANDOM = new Random();  // lo uso per generarmi la creazione random
 
-    // Costruttore
     public Griglia(int dimensione) {
         if (dimensione < 3) {
             throw new IllegalArgumentException("La dimensione della griglia deve essere >= 3");
@@ -235,6 +234,14 @@ public class Griglia{
     }
 
     public Casella getCella(int x,int y){ return griglia[x][y];}
+
+    public List<Blocco> getBlocchi() {
+        return blocchi;
+    }
+
+    public Casella[][] getGriglia()
+    {   return griglia;
+    }
 
 }
 
