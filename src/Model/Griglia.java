@@ -243,6 +243,16 @@ public class Griglia{
     {   return griglia;
     }
 
+    public int[][] getValoriAttuali() {
+        int[][] valori = new int[dimensione][dimensione];
+        for (int x = 0; x < dimensione; x++) {
+            for (int y = 0; y < dimensione; y++) {
+                valori[x][y] = griglia[x][y].getValore();
+            }
+        }
+        return valori;
+    }
+
 }
 
 

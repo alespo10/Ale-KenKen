@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare).">
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Controller + Grafica (new game)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Blocco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Blocco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Casella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Casella.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Griglia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Griglia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Soluzione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Soluzione.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Grafica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +73,8 @@
       <workItem from="1733559209497" duration="937000" />
       <workItem from="1733582628726" duration="978000" />
       <workItem from="1733670905325" duration="556000" />
+      <workItem from="1733733614644" duration="313000" />
+      <workItem from="1733818520296" duration="765000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -132,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733559694905</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Controller + Grafica (new game)">
+      <option name="closed" value="true" />
+      <created>1733733737483</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733733737483</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +152,7 @@
     <MESSAGE value="Sviluppo della Griglia (incompleto)" />
     <MESSAGE value="Soluzione + SoluzioneAbstract (testare)" />
     <MESSAGE value="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare)." />
+    <MESSAGE value="Controller + Grafica (new game)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controller + Grafica (new game)" />
   </component>
 </project>

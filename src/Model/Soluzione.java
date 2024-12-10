@@ -173,7 +173,6 @@ public class Soluzione extends SoluzioneAbstract<Casella, Integer> {
         }
     }
 
-
     private boolean tuttiAssegnati() {
         // Verifica se tutte le celle sono assegnate
         for (int x = 0; x < dimensione; x++) {
@@ -184,6 +183,10 @@ public class Soluzione extends SoluzioneAbstract<Casella, Integer> {
             }
         }
         return true;
+    }
+
+    public List<int[][]> getSoluzioni() {
+        return soluzioni;
     }
 
 

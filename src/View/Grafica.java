@@ -18,6 +18,11 @@ public class Grafica extends JFrame {
 
     private JButton nuovoGiocoButton;
     private JButton caricaButton;
+    private JButton provaSoluzione;
+    private JButton salvaButton;
+
+    private JButton undoButton;
+    private JButton redoButton;
 
     private JTextField numeroSoluzioniField;
     private JTextField dimensioneMatriceField;
@@ -63,6 +68,22 @@ public class Grafica extends JFrame {
         grigliaPanel = new JPanel();
         schermataGioco.add(infoBloccoLabel, BorderLayout.NORTH);
         schermataGioco.add(grigliaPanel, BorderLayout.CENTER);
+
+        // Aggingo la parte sotto della griglia
+
+        salvaButton = new JButton("Salva");
+        undoButton = new JButton("Undo");
+        redoButton = new JButton("Redo");
+        provaSoluzione = new JButton("Verifica soluzione");
+
+        JPanel pulsantiPanel = new JPanel(new FlowLayout());
+        pulsantiPanel.add(undoButton);
+        pulsantiPanel.add(redoButton);
+        pulsantiPanel.add(provaSoluzione);
+        pulsantiPanel.add(salvaButton);
+
+
+        schermataGioco.add(pulsantiPanel, BorderLayout.SOUTH);
 
 
         add(schermataIniziale, "iniziale");
@@ -193,6 +214,10 @@ public class Grafica extends JFrame {
 
     public void setAvviaListener(ActionListener listener) {
         avviaButton.addActionListener(listener);
+    }
+
+    public void setVerificaListener(ActionListener listener) {
+        provaSoluzione.addActionListener(listener);
     }
 
     public void mostraSchermata(String schermata) {
