@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Aggiunta bottoni: Salva + Undo/Redo + Verifica soluzione. Implementato solo l'ultimo">
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Modifica del controller su come calcolare soluzioni.">
+      <change afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Command/CommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Command/HistoryCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Command/InserisciNumeroCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +57,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Command" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,7 +79,8 @@
       <workItem from="1733582628726" duration="978000" />
       <workItem from="1733670905325" duration="556000" />
       <workItem from="1733733614644" duration="313000" />
-      <workItem from="1733818520296" duration="3238000" />
+      <workItem from="1733818520296" duration="3593000" />
+      <workItem from="1733826310726" duration="130000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -145,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733819363518</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Modifica del controller su come calcolare soluzioni.">
+      <option name="closed" value="true" />
+      <created>1733825220021</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733825220021</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +176,7 @@
     <MESSAGE value="Griglia aggiunti metodi di supporto (generazione blocchi da migliorare)." />
     <MESSAGE value="Controller + Grafica (new game)" />
     <MESSAGE value="Aggiunta bottoni: Salva + Undo/Redo + Verifica soluzione. Implementato solo l'ultimo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta bottoni: Salva + Undo/Redo + Verifica soluzione. Implementato solo l'ultimo" />
+    <MESSAGE value="Modifica del controller su come calcolare soluzioni." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifica del controller su come calcolare soluzioni." />
   </component>
 </project>
