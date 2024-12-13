@@ -28,6 +28,7 @@ public class Griglia{
     // Metodo per popolare la griglia con blocchi e vincoli che richiamo nel Controller poi
     public void popolaGriglia() {
         generaGrigliaPiena();
+        stampaGriglia();
         creaBlocchiAdiacenti(); // Step 2: Genera blocchi adiacenti con vincoli
         generaGrigliaVuota(); // Step 1: Inizializza la griglia vuota
 
@@ -67,7 +68,7 @@ public class Griglia{
     }
 
     // Controlla se un numero può essere inserito nella cella
-    private boolean puoiInserire(int x, int y, int numero) {
+    public boolean puoiInserire(int x, int y, int numero) {
         // Controlla la riga
         for (int col = 0; col < dimensione; col++) {
             if (griglia[x][col].getValore() == numero) {
@@ -251,6 +252,17 @@ public class Griglia{
             }
         }
         return valori;
+    }
+
+    public void stampaGriglia() {
+        for (int x = 0; x < dimensione; x++) {
+            for (int y = 0; y < dimensione; y++) {
+                int valore = griglia[x][y].getValore();
+                // Stampa "." per celle vuote (valore == 0)
+                System.out.print((valore == 0 ? "." : valore) + " ");
+            }
+            System.out.println(); // A capo per la riga successiva
+        }
     }
 
 }

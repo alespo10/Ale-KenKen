@@ -1,5 +1,8 @@
 package Controller;
 
+import Command.HistoryCommandHandler;
+import Command.InserisciNumeroCommand;
+import Model.Casella;
 import Model.Griglia;
 import Model.Soluzione;
 import View.Grafica;
@@ -10,9 +13,11 @@ import java.util.List;
 public class Controller {
     private final Grafica grafica;
     private Griglia griglia;
+    private final HistoryCommandHandler historyHandler;
     private List<int[][]> soluzioni;
 
     public Controller() {
+        this.historyHandler = new HistoryCommandHandler();
         this.grafica = new Grafica();
         grafica.setVisible(true);
 
@@ -34,6 +39,34 @@ public class Controller {
                 grafica.mostraSchermata("gioco");
                 grafica.mostraGriglia(griglia.getGriglia(), griglia.getBlocchi());
             }
+        });
+
+        // Listener per il pulsante Undo
+        historyHandler.setOnStateChanged(v -> {
+            grafica.aggiornaGriglia(griglia.getGriglia());
+            aggiornaStatoPulsanti();
+        });
+        grafica.setUndoListener(e -> historyHandler.undo());
+        grafica.setRedoListener(e -> historyHandler.redo());
+
+
+        grafica.setCellaModificaListener((x, y, nuovoValore) -> {
+            Casella casella = griglia.getCella(x, y);
+
+            if(!griglia.puoiInserire(x, y, nuovoValore)) {
+                JOptionPane.showMessageDialog(grafica, "Errore: Numero gia presente in riga o colonna.", "Errore", JOptionPane.ERROR_MESSAGE);
+            }else {
+                // Crea il comando PRIMA di applicare il nuovo valore
+                InserisciNumeroCommand cmd = new InserisciNumeroCommand(casella, nuovoValore);
+
+                // Esegui il comando tramite il gestore della cronologia
+                historyHandler.handle(cmd);
+
+                // Aggiorna la grafica
+                grafica.aggiornaGriglia(griglia.getGriglia());
+                aggiornaStatoPulsanti();
+            }
+
         });
 
         //Listner di verifica della soluzione finale
@@ -70,8 +103,7 @@ public class Controller {
                 JOptionPane.showMessageDialog(grafica, "La soluzione non è corretta, riprova.", "Errore", JOptionPane.ERROR_MESSAGE);
             }
         });
-
-        // aggiungere metodo che cambia gli stati dei vari pulsanti
+        aggiornaStatoPulsanti();
     }
 
 
@@ -86,6 +118,12 @@ public class Controller {
         }
         return true;
     }
+
+    private void aggiornaStatoPulsanti() {
+        grafica.abilitaUndo(!historyHandler.isUndoVuoto());
+        grafica.abilitaRedo(!historyHandler.isRedoVuoto());
+    }
+
 
 }
 

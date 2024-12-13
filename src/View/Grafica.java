@@ -155,8 +155,11 @@ public class Grafica extends JFrame {
                                 return;
                             }
 
+                            // Notifica il controller della modifica
+                            if (cellaModificaListener != null ) {
+                                cellaModificaListener.onCellaModifica(finalX, finalY, nuovoValore);
+                            }
                         } catch (NumberFormatException ex) {
-                            // Ignora input non numerici
                             JOptionPane.showMessageDialog(null,
                                     "Inserisci un numero valido.",
                                     "Errore di inserimento",
@@ -241,6 +244,55 @@ public class Grafica extends JFrame {
             return -1;
         }
     }
+
+    // Metodi di supporto Command
+
+    public void aggiornaGriglia(Casella[][] griglia) {
+        // Imposta il flag per evitare loop
+        inAggiornamento = true;
+
+        SwingUtilities.invokeLater(() -> {
+            for (int x = 0; x < griglia.length; x++) {
+                for (int y = 0; y < griglia[x].length; y++) {
+                    Casella casella = griglia[x][y];
+                    JTextField cella = caselle[x][y];
+                    String nuovoValore = casella.getValore() == 0 ? "" : String.valueOf(casella.getValore());
+
+                    if (!cella.getText().equals(nuovoValore)) {
+                        cella.setText(nuovoValore);
+                    }
+                }
+            }
+
+            // Disattiva il flag dopo l'aggiornamento
+            inAggiornamento = false;
+        });
+    }
+
+    public void setUndoListener(ActionListener listener) {
+        undoButton.addActionListener(listener);
+    }
+    public void setRedoListener(ActionListener listener) {
+        redoButton.addActionListener(listener);
+    }
+    public void abilitaUndo(boolean abilitato) {
+        undoButton.setEnabled(abilitato);
+    }
+    public void abilitaRedo(boolean abilitato) {
+        redoButton.setEnabled(abilitato);
+    }
+
+
+    private CellaModificaListener cellaModificaListener;
+    public void setCellaModificaListener(CellaModificaListener listener) {
+        this.cellaModificaListener = listener;
+    }
+
+    @FunctionalInterface
+    public interface CellaModificaListener {
+        void onCellaModifica(int x, int y, int nuovoValore);
+    }
+
 
 
 }
