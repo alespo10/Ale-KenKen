@@ -16,17 +16,22 @@ import java.util.Map;
 
 public class Grafica extends JFrame {
 
+    //Bottoni iniziali
     private JButton nuovoGiocoButton;
     private JButton caricaButton;
+
+    //Bottoni interfaccia gioco
     private JButton provaSoluzione;
     private JButton salvaButton;
-
     private JButton undoButton;
     private JButton redoButton;
 
+    //Input + avvio
     private JTextField numeroSoluzioniField;
     private JTextField dimensioneMatriceField;
     private JButton avviaButton;
+
+    //Visualizzazione griglia
     private JPanel grigliaPanel;
     private JLabel infoBloccoLabel;
     private boolean inAggiornamento = false;
@@ -269,18 +274,23 @@ public class Grafica extends JFrame {
         });
     }
 
+    //Listner per Undo/Redo
     public void setUndoListener(ActionListener listener) {
         undoButton.addActionListener(listener);
     }
     public void setRedoListener(ActionListener listener) {
         redoButton.addActionListener(listener);
     }
+    //Listner per mostrare/nascondere Undo/Redo
     public void abilitaUndo(boolean abilitato) {
         undoButton.setEnabled(abilitato);
     }
     public void abilitaRedo(boolean abilitato) {
         redoButton.setEnabled(abilitato);
     }
+    //Listner per caricare e salvare la griglia
+    public void setSalvaListener(ActionListener listener) {salvaButton.addActionListener(listener);}
+    public void setCaricaListener(ActionListener listener) {caricaButton.addActionListener(listener);}
 
 
     private CellaModificaListener cellaModificaListener;

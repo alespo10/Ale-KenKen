@@ -2,23 +2,30 @@ package Controller;
 
 import Command.HistoryCommandHandler;
 import Command.InserisciNumeroCommand;
+import Memento.Memento;
 import Model.Casella;
 import Model.Griglia;
 import Model.Soluzione;
 import View.Grafica;
 import javax.swing.*;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
+import Memento.GameMemento;
 
 
 public class Controller {
     private final Grafica grafica;
     private Griglia griglia;
     private final HistoryCommandHandler historyHandler;
-    private List<int[][]> soluzioni;
+    private List<int[][]> soluzioni = new ArrayList<>();
 
     public Controller() {
         this.historyHandler = new HistoryCommandHandler();
         this.grafica = new Grafica();
+
+        grafica.setSalvaListener(e -> salvaPartita());
+        grafica.setCaricaListener(e -> caricaPartita());
         grafica.setVisible(true);
 
         grafica.setNuovoGiocoListener(e -> grafica.mostraSchermata("nuovoGioco"));
@@ -35,6 +42,9 @@ public class Controller {
                 solver.risolvi();
                 soluzioni = solver.getSoluzioni();
                 System.out.println(soluzioni);
+
+                griglia.setSoluzioni(soluzioni); // Salva le soluzioni nella griglia
+
 
                 grafica.mostraSchermata("gioco");
                 grafica.mostraGriglia(griglia.getGriglia(), griglia.getBlocchi());
@@ -78,20 +88,20 @@ public class Controller {
             }
 
             System.out.println("Soluzioni Generate:");
-            for (int[][] soluzione : soluzioni) {
+            for (int[][] soluzione : griglia.getSoluzioni()) {
                 for (int[] row : soluzione) {
                     System.out.println(java.util.Arrays.toString(row));
                 }
                 System.out.println("----");
             }
 
-            if (soluzioni.isEmpty()) {
+            if (griglia.getSoluzioni().isEmpty()) {
                 JOptionPane.showMessageDialog(grafica, "Errore: impossibile verificare la soluzione.", "Errore", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
             boolean corretto = false;
-            for (int[][] soluzione : soluzioni) {
+            for (int[][] soluzione : griglia.getSoluzioni()) {
                 if (confrontaSoluzione(valoriInseriti, soluzione)) {
                     corretto = true;
                     break;
@@ -123,6 +133,53 @@ public class Controller {
         grafica.abilitaUndo(!historyHandler.isUndoVuoto());
         grafica.abilitaRedo(!historyHandler.isRedoVuoto());
     }
+
+    private void salvaPartita() {
+        if (griglia == null) {
+            JOptionPane.showMessageDialog(grafica, "Nessuna partita in corso da salvare.", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        JFileChooser fileChooser = new JFileChooser();
+        if (fileChooser.showSaveDialog(grafica) == JFileChooser.APPROVE_OPTION) {
+            String filePath = fileChooser.getSelectedFile().getAbsolutePath();
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
+                oos.writeObject(griglia.salva()); // Salva il memento con le soluzioni
+                JOptionPane.showMessageDialog(grafica, "Partita salvata con successo.", "Salvataggio", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(grafica, "Errore durante il salvataggio: " + ex.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+
+    private void caricaPartita() {
+        JFileChooser fileChooser = new JFileChooser();
+        if (fileChooser.showOpenDialog(grafica) == JFileChooser.APPROVE_OPTION) {
+            String filePath = fileChooser.getSelectedFile().getAbsolutePath();
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filePath))) {
+                Memento memento = (Memento) ois.readObject();
+                if (griglia == null) {
+                    int dimensione = ((GameMemento) memento).getValoriGriglia().length;
+                    griglia = new Griglia(dimensione);
+                }
+                griglia.ripristina(memento);
+
+                // Verifica che le soluzioni siano state ripristinate
+                if (griglia.getSoluzioni() == null || griglia.getSoluzioni().isEmpty()) {
+                    JOptionPane.showMessageDialog(grafica, "Attenzione: nessuna soluzione trovata nel salvataggio.", "Avviso", JOptionPane.WARNING_MESSAGE);
+                }
+
+                // Aggiorna la vista con lo stato ripristinato
+                grafica.mostraGriglia(griglia.getGriglia(), griglia.getBlocchi());
+                grafica.mostraSchermata("gioco"); // Mostra la schermata di gioco
+                aggiornaStatoPulsanti();
+                JOptionPane.showMessageDialog(grafica, "Partita caricata con successo.", "Caricamento", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException | ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(grafica, "Errore durante il caricamento: " + ex.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
 
 
 }

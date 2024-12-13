@@ -1,12 +1,17 @@
 package Model;
 
+import Memento.*;
+
 import java.util.*;
 import java.util.List;
 
-public class Griglia{
+public class Griglia implements Originator{
     private final int dimensione;
     private final Casella[][] griglia;
     private final List<Blocco> blocchi;
+
+    private List<int[][]> soluzioni; // Lista delle soluzioni
+
     private static final Random RANDOM = new Random();  // lo uso per generarmi la creazione random
 
     public Griglia(int dimensione) {
@@ -16,6 +21,7 @@ public class Griglia{
         this.dimensione = dimensione;
         this.griglia = new Casella[dimensione][dimensione];
         this.blocchi = new ArrayList<>();
+        this.soluzioni = new ArrayList<>();
 
         // Inizializza la griglia con oggetti Casella
         for (int x = 0; x < dimensione; x++) {
@@ -258,12 +264,73 @@ public class Griglia{
         for (int x = 0; x < dimensione; x++) {
             for (int y = 0; y < dimensione; y++) {
                 int valore = griglia[x][y].getValore();
-                // Stampa "." per celle vuote (valore == 0)
+                // Stampa "." per celle vuote
                 System.out.print((valore == 0 ? "." : valore) + " ");
             }
-            System.out.println(); // A capo per la riga successiva
+            System.out.println();
         }
     }
+
+    @Override
+    public Memento salva() {
+        int[][] valoriGriglia = getValoriAttuali(); // Ottieni i valori della griglia
+
+        List<GameMemento.BloccoInfo> blocchiInfo = new ArrayList<>();
+        for (Blocco blocco : blocchi) {
+            List<int[]> celle = new ArrayList<>();
+            for (Casella casella : blocco.getCaselle()) {
+                celle.add(new int[]{casella.getX(), casella.getY()});
+            }
+            blocchiInfo.add(new GameMemento.BloccoInfo(blocco.getTipoVincolo(), blocco.getRisultatoVincolo(), celle));
+        }
+
+        // Controlla che le soluzioni siano corrette prima di salvarle
+        System.out.println("Numero di soluzioni salvate: " + soluzioni.size());
+        return new GameMemento(valoriGriglia, blocchiInfo, new ArrayList<>(soluzioni));
+    }
+
+
+
+    @Override
+    public void ripristina(Memento memento) {
+        if (memento instanceof GameMemento) {
+            GameMemento stato = (GameMemento) memento;
+            int[][] valoriGriglia = stato.getValoriGriglia();
+            for (int x = 0; x < valoriGriglia.length; x++) {
+                for (int y = 0; y < valoriGriglia[x].length; y++) {
+                    griglia[x][y].setValore(valoriGriglia[x][y]);
+                }
+            }
+
+            blocchi.clear();
+            for (GameMemento.BloccoInfo bloccoInfo : stato.getBlocchiInfo()) {
+                Blocco blocco = new Blocco(bloccoInfo.tipoVincolo, bloccoInfo.risultatoVincolo);
+                for (int[] posizione : bloccoInfo.celle) {
+                    Casella casella = griglia[posizione[0]][posizione[1]];
+                    casella.setBlocco(blocco);
+                    blocco.aggiungiCasella(casella);
+                }
+                blocchi.add(blocco);
+            }
+
+            this.soluzioni = (stato.getSoluzioni() != null) ? stato.getSoluzioni() : new ArrayList<>();
+            System.out.println("Numero di soluzioni ripristinate: " + soluzioni.size());
+
+        }
+    }
+
+
+
+
+    public List<int[][]> getSoluzioni() {
+        return soluzioni;
+    }
+
+    public void setSoluzioni(List<int[][]> soluzioni) {
+        this.soluzioni = soluzioni;
+    }
+
+
 
 }
 

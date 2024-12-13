@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Aggiunta pattern Command">
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Implementazione pattern command con il sistema">
+      <change afterPath="$PROJECT_DIR$/src/Memento/GameMemento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Memento/Memento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Memento/Originator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -47,6 +50,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alessandro/Ale-KenKen/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -58,6 +62,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Command" />
     </key>
@@ -83,6 +90,9 @@
       <workItem from="1733826310726" duration="130000" />
       <workItem from="1734013843891" duration="496000" />
       <workItem from="1734014346071" duration="560000" />
+      <workItem from="1734079061578" duration="145000" />
+      <workItem from="1734079392416" duration="4893000" />
+      <workItem from="1734084470947" duration="598000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -172,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734013910400</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Implementazione pattern command con il sistema">
+      <option name="closed" value="true" />
+      <created>1734079130157</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1734079130157</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +206,7 @@
     <MESSAGE value="Aggiunta bottoni: Salva + Undo/Redo + Verifica soluzione. Implementato solo l'ultimo" />
     <MESSAGE value="Modifica del controller su come calcolare soluzioni." />
     <MESSAGE value="Aggiunta pattern Command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta pattern Command" />
+    <MESSAGE value="Implementazione pattern command con il sistema" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementazione pattern command con il sistema" />
   </component>
 </project>
