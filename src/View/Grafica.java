@@ -36,6 +36,12 @@ public class Grafica extends JFrame {
     private JLabel infoBloccoLabel;
     private boolean inAggiornamento = false;
 
+    //Visualizzare le soluzioni possibili (P3)
+    private JLabel soluzioneCorrenteLabel;
+    private JButton visualizzaSoluzioni;
+    private JButton avanti;
+    private JButton dietro;
+
     private JTextField[][] caselle;
     private final Map<Blocco, Color> coloriBlocchi = new HashMap<>();
 
@@ -86,6 +92,23 @@ public class Grafica extends JFrame {
         pulsantiPanel.add(redoButton);
         pulsantiPanel.add(provaSoluzione);
         pulsantiPanel.add(salvaButton);
+
+        //Inserimento parte visualizzazione (P3)
+        visualizzaSoluzioni = new JButton("Visualizza Soluzioni");
+        avanti = new JButton("Avanti");
+        dietro = new JButton("Indietro");
+        soluzioneCorrenteLabel = new JLabel("Soluzione: 0", JLabel.CENTER);
+
+        // Nascondi i bottoni di navigazione all'inizio
+        avanti.setVisible(false);
+        dietro.setVisible(false);
+        soluzioneCorrenteLabel.setVisible(false);
+
+        // Aggiungi i nuovi bottoni alla schermata di gioco
+        pulsantiPanel.add(visualizzaSoluzioni);
+        pulsantiPanel.add(dietro);
+        pulsantiPanel.add(avanti);
+        pulsantiPanel.add(soluzioneCorrenteLabel);
 
 
         schermataGioco.add(pulsantiPanel, BorderLayout.SOUTH);
@@ -292,6 +315,26 @@ public class Grafica extends JFrame {
     public void setSalvaListener(ActionListener listener) {salvaButton.addActionListener(listener);}
     public void setCaricaListener(ActionListener listener) {caricaButton.addActionListener(listener);}
 
+    public void setVisualizzaSoluzioniListener(ActionListener listener) { visualizzaSoluzioni.addActionListener(listener);
+    }
+    public void setAvantiListener(ActionListener listener) {
+        avanti.addActionListener(listener);
+    }
+
+    public void setIndietroListener(ActionListener listener) {
+        dietro.addActionListener(listener);
+    }
+
+    // Metodo per mostrare/nascondere i bottoni di navigazione
+    public void mostraNavigazioneSoluzioni(boolean visibile) {
+        avanti.setVisible(visibile);
+        dietro.setVisible(visibile);
+        soluzioneCorrenteLabel.setVisible(visibile);
+    }
+
+    public void aggiornaSoluzioneCorrente(int indice, int totale) {
+        soluzioneCorrenteLabel.setText("Soluzione: " + (indice + 1) + " / " + totale);
+    }
 
     private CellaModificaListener cellaModificaListener;
     public void setCellaModificaListener(CellaModificaListener listener) {

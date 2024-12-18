@@ -9,8 +9,6 @@ import Model.Soluzione;
 import View.Grafica;
 import javax.swing.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import Memento.GameMemento;
 
 
@@ -18,7 +16,8 @@ public class Controller {
     private final Grafica grafica;
     private Griglia griglia;
     private final HistoryCommandHandler historyHandler;
-    private List<int[][]> soluzioni = new ArrayList<>();
+    private int indiceSoluzioneCorrente; // Indice della soluzione attualmente mostrata
+
 
     public Controller() {
         this.historyHandler = new HistoryCommandHandler();
@@ -40,11 +39,8 @@ public class Controller {
 
                 Soluzione solver = new Soluzione(griglia, grafica.getNumeroSoluzioni());
                 solver.risolvi();
-                soluzioni = solver.getSoluzioni();
-                System.out.println(soluzioni);
 
-                griglia.setSoluzioni(soluzioni); // Salva le soluzioni nella griglia
-
+                griglia.setSoluzioni(solver.getSoluzioni());   //assegno le soluzioni direttamente alla griglia
 
                 grafica.mostraSchermata("gioco");
                 grafica.mostraGriglia(griglia.getGriglia(), griglia.getBlocchi());
@@ -66,17 +62,37 @@ public class Controller {
             if(!griglia.puoiInserire(x, y, nuovoValore)) {
                 JOptionPane.showMessageDialog(grafica, "Errore: Numero gia presente in riga o colonna.", "Errore", JOptionPane.ERROR_MESSAGE);
             }else {
-                // Crea il comando PRIMA di applicare il nuovo valore
                 InserisciNumeroCommand cmd = new InserisciNumeroCommand(casella, nuovoValore);
-
-                // Esegui il comando tramite il gestore della cronologia
                 historyHandler.handle(cmd);
-
-                // Aggiorna la grafica
                 grafica.aggiornaGriglia(griglia.getGriglia());
                 aggiornaStatoPulsanti();
             }
 
+        });
+
+        // Listener per il bottone "Visualizza Soluzioni"
+        grafica.setVisualizzaSoluzioniListener(e -> {
+            if (!griglia.getSoluzioni().isEmpty()) {
+                indiceSoluzioneCorrente = 0; // Mostra la prima soluzione
+                mostraSoluzione(indiceSoluzioneCorrente);
+                grafica.mostraNavigazioneSoluzioni(true); // Mostra i bottoni di navigazione
+            } else {
+                JOptionPane.showMessageDialog(grafica, "Nessuna soluzione disponibile.");
+            }
+        });
+        // Listener per il bottone "Avanti"
+        grafica.setAvantiListener(e -> {
+            if (indiceSoluzioneCorrente < griglia.getSoluzioni().size() - 1) {
+                indiceSoluzioneCorrente++;
+                mostraSoluzione(indiceSoluzioneCorrente);
+            }
+        });
+        // Listener per il bottone "Indietro"
+        grafica.setIndietroListener(e -> {
+            if (indiceSoluzioneCorrente > 0) {
+                indiceSoluzioneCorrente--;
+                mostraSoluzione(indiceSoluzioneCorrente);
+            }
         });
 
         //Listner di verifica della soluzione finale
@@ -180,7 +196,16 @@ public class Controller {
         }
     }
 
-
+    private void mostraSoluzione(int indice) {
+        int[][] soluzione = griglia.getSoluzioni().get(indice);
+        for (int x = 0; x < griglia.getDimensione(); x++) {
+            for (int y = 0; y < griglia.getDimensione(); y++) {
+                griglia.getCella(x, y).setValore(soluzione[x][y]);
+            }
+        }
+        grafica.aggiornaGriglia(griglia.getGriglia());
+        grafica.aggiornaSoluzioneCorrente(indice, griglia.getSoluzioni().size());
+    }
 
 }
 

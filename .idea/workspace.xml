@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Implementazione pattern command con il sistema">
-      <change afterPath="$PROJECT_DIR$/src/Memento/GameMemento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Memento/Memento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Memento/Originator.java" afterDir="false" />
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Non faceva confrontare le soluzioni una volta caricata una vecchia griglia (ora va, ma l'implementazione va rivista)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Griglia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Griglia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Grafica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +87,10 @@
       <workItem from="1734014346071" duration="560000" />
       <workItem from="1734079061578" duration="145000" />
       <workItem from="1734079392416" duration="4893000" />
-      <workItem from="1734084470947" duration="598000" />
+      <workItem from="1734084470947" duration="709000" />
+      <workItem from="1734085445506" duration="31000" />
+      <workItem from="1734517079486" duration="23000" />
+      <workItem from="1734517109090" duration="792000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -190,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734079130157</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Non faceva confrontare le soluzioni una volta caricata una vecchia griglia (ora va, ma l'implementazione va rivista)">
+      <option name="closed" value="true" />
+      <created>1734085156111</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1734085156111</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +213,7 @@
     <MESSAGE value="Modifica del controller su come calcolare soluzioni." />
     <MESSAGE value="Aggiunta pattern Command" />
     <MESSAGE value="Implementazione pattern command con il sistema" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementazione pattern command con il sistema" />
+    <MESSAGE value="Non faceva confrontare le soluzioni una volta caricata una vecchia griglia (ora va, ma l'implementazione va rivista)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Non faceva confrontare le soluzioni una volta caricata una vecchia griglia (ora va, ma l'implementazione va rivista)" />
   </component>
 </project>
