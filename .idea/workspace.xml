@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Non faceva confrontare le soluzioni una volta caricata una vecchia griglia (ora va, ma l'implementazione va rivista)">
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Aggiunta visualizzazione soluzioni (correggere problema caricamento partita)">
+      <change afterPath="$PROJECT_DIR$/src/Test/BloccoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/CasellaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/GrigliaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/SoluzioneTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ale-KenKen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ale-KenKen.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Blocco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Blocco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Casella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Casella.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Soluzione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Soluzione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SoluzioneAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SoluzioneAbstract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Grafica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +50,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.GrigliaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SoluzioneTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -90,7 +105,13 @@
       <workItem from="1734084470947" duration="709000" />
       <workItem from="1734085445506" duration="31000" />
       <workItem from="1734517079486" duration="23000" />
-      <workItem from="1734517109090" duration="792000" />
+      <workItem from="1734517109090" duration="953000" />
+      <workItem from="1734603193321" duration="243000" />
+      <workItem from="1734805577701" duration="401000" />
+      <workItem from="1734806124196" duration="133000" />
+      <workItem from="1735037406309" duration="1724000" />
+      <workItem from="1735039145390" duration="14000" />
+      <workItem from="1735056055362" duration="444000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -196,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734085156111</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Aggiunta visualizzazione soluzioni (correggere problema caricamento partita)">
+      <option name="closed" value="true" />
+      <created>1734518018461</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1734518018461</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +243,7 @@
     <MESSAGE value="Aggiunta pattern Command" />
     <MESSAGE value="Implementazione pattern command con il sistema" />
     <MESSAGE value="Non faceva confrontare le soluzioni una volta caricata una vecchia griglia (ora va, ma l'implementazione va rivista)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Non faceva confrontare le soluzioni una volta caricata una vecchia griglia (ora va, ma l'implementazione va rivista)" />
+    <MESSAGE value="Aggiunta visualizzazione soluzioni (correggere problema caricamento partita)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta visualizzazione soluzioni (correggere problema caricamento partita)" />
   </component>
 </project>

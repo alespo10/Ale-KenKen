@@ -8,7 +8,6 @@ import java.util.List;
 public class Soluzione extends SoluzioneAbstract<Casella, Integer> {
     private final Griglia griglia;
     private final List<int[][]> soluzioni;
-
     private final int dimensione;
     private int soluzioniTrovate;
     private final int maxSoluzioni;
@@ -32,7 +31,6 @@ public class Soluzione extends SoluzioneAbstract<Casella, Integer> {
                 return false; // Valore già presente nella riga o colonna
             }
         }
-
         // Recupera il blocco della cella
         Blocco blocco = casella.getBlocco();
         if (blocco != null) {
@@ -54,14 +52,13 @@ public class Soluzione extends SoluzioneAbstract<Casella, Integer> {
         return true; // Se la cella non appartiene a un blocco, il valore è sempre assegnabile
     }
 
-    // Controlla se tutte le celle del blocco sono assegnate
     private boolean bloccoCompleto(Blocco blocco) {
         for (Casella c : blocco.getCaselle()) {
             if (c.isVuota()) {
                 return false; // Almeno una cella è vuota
             }
         }
-        return true; // Tutte le celle sono assegnate
+        return true;
     }
 
     // Controlla se il vincolo è ancora possibile con le celle parzialmente assegnate
@@ -76,12 +73,9 @@ public class Soluzione extends SoluzioneAbstract<Casella, Integer> {
                 valori.add(c.getValore());
             }
         }
-
         // Ottieni i parametri del blocco
         Blocco.TipoVincolo tipoVincolo = blocco.getTipoVincolo();
         int risultatoVincolo = blocco.getRisultatoVincolo();
-
-        // Calcola se è possibile soddisfare il vincolo
         switch (tipoVincolo) {
             case SOMMA:
                 int sommaCorrente = valori.stream().mapToInt(Integer::intValue).sum();

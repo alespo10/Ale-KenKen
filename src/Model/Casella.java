@@ -1,6 +1,5 @@
 package Model;
 
-
 public class Casella {
     private final int x;
     private final int y;

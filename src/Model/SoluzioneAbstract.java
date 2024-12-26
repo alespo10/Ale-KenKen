@@ -1,6 +1,5 @@
 package Model;
 
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -37,18 +36,17 @@ public abstract class SoluzioneAbstract<P,S> {
                 if (esisteSoluzione(punto)) {
                     scriviSoluzione();
                 } else {
-                    // Prova con il prossimo punto
+                    // Proviamo con il prossimo punto
                     List<P> nuoviPunti = new ArrayList<>(punti);
                     nuoviPunti.remove(punto);
                     if (!nuoviPunti.isEmpty()) {
                         tentativo(nuoviPunti, nuoviPunti.getFirst());
                     }
                 }
-                deassegna(punto); // Utilizzo il Backtracking: de assegno la scelta
+                deassegna(punto);
             }
         }
     }
-
 
     protected abstract void risolvi();
 

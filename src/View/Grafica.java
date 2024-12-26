@@ -226,8 +226,6 @@ public class Grafica extends JFrame {
     }
 
 
-
-
     private void assegnaColoriBlocchi(List<Blocco> blocchi) {
         coloriBlocchi.clear(); // Ripulisce i colori precedenti
         for (Blocco blocco : blocchi) {
@@ -239,62 +237,12 @@ public class Grafica extends JFrame {
         nuovoGiocoButton.addActionListener(listener);
     }
 
-    public void setCaricaGiocoListener(ActionListener listener) {
-        caricaButton.addActionListener(listener);
-    }
-
     public void setAvviaListener(ActionListener listener) {
         avviaButton.addActionListener(listener);
     }
 
     public void setVerificaListener(ActionListener listener) {
         provaSoluzione.addActionListener(listener);
-    }
-
-    public void mostraSchermata(String schermata) {
-        ((CardLayout) getContentPane().getLayout()).show(getContentPane(), schermata);
-    }
-
-    public int getNumeroSoluzioni() {
-        try {
-            return Integer.parseInt(numeroSoluzioniField.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Inserisci un numero valido per le soluzioni.", "Errore", JOptionPane.ERROR_MESSAGE);
-            return -1;
-        }
-    }
-
-    public int getDimensioneMatrice() {
-        try {
-            return Integer.parseInt(dimensioneMatriceField.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Inserisci un numero valido per la dimensione della matrice.", "Errore", JOptionPane.ERROR_MESSAGE);
-            return -1;
-        }
-    }
-
-    // Metodi di supporto Command
-
-    public void aggiornaGriglia(Casella[][] griglia) {
-        // Imposta il flag per evitare loop
-        inAggiornamento = true;
-
-        SwingUtilities.invokeLater(() -> {
-            for (int x = 0; x < griglia.length; x++) {
-                for (int y = 0; y < griglia[x].length; y++) {
-                    Casella casella = griglia[x][y];
-                    JTextField cella = caselle[x][y];
-                    String nuovoValore = casella.getValore() == 0 ? "" : String.valueOf(casella.getValore());
-
-                    if (!cella.getText().equals(nuovoValore)) {
-                        cella.setText(nuovoValore);
-                    }
-                }
-            }
-
-            // Disattiva il flag dopo l'aggiornamento
-            inAggiornamento = false;
-        });
     }
 
     //Listner per Undo/Redo
@@ -325,6 +273,26 @@ public class Grafica extends JFrame {
         dietro.addActionListener(listener);
     }
 
+    public void mostraSchermata(String schermata) { ((CardLayout) getContentPane().getLayout()).show(getContentPane(), schermata);}
+
+    public int getNumeroSoluzioni() {
+        try {
+            return Integer.parseInt(numeroSoluzioniField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Inserisci un numero valido per le soluzioni.", "Errore", JOptionPane.ERROR_MESSAGE);
+            return -1;
+        }
+    }
+
+    public int getDimensioneMatrice() {
+        try {
+            return Integer.parseInt(dimensioneMatriceField.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Inserisci un numero valido per la dimensione della matrice.", "Errore", JOptionPane.ERROR_MESSAGE);
+            return -1;
+        }
+    }
+
     // Metodo per mostrare/nascondere i bottoni di navigazione
     public void mostraNavigazioneSoluzioni(boolean visibile) {
         avanti.setVisible(visibile);
@@ -336,6 +304,25 @@ public class Grafica extends JFrame {
         soluzioneCorrenteLabel.setText("Soluzione: " + (indice + 1) + " / " + totale);
     }
 
+    public void aggiornaGriglia(Casella[][] griglia) {
+        // Imposto il flag per evitare loop
+        inAggiornamento = true;
+        SwingUtilities.invokeLater(() -> {
+            for (int x = 0; x < griglia.length; x++) {
+                for (int y = 0; y < griglia[x].length; y++) {
+                    Casella casella = griglia[x][y];
+                    JTextField cella = caselle[x][y];
+                    String nuovoValore = casella.getValore() == 0 ? "" : String.valueOf(casella.getValore());
+
+                    if (!cella.getText().equals(nuovoValore)) {
+                        cella.setText(nuovoValore);
+                    }
+                }
+            }
+            inAggiornamento = false;
+        });
+    }
+
     private CellaModificaListener cellaModificaListener;
     public void setCellaModificaListener(CellaModificaListener listener) {
         this.cellaModificaListener = listener;
@@ -345,7 +332,5 @@ public class Grafica extends JFrame {
     public interface CellaModificaListener {
         void onCellaModifica(int x, int y, int nuovoValore);
     }
-
-
 
 }

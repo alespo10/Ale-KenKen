@@ -53,7 +53,7 @@ public class Blocco  {
             }
             valori.add(casella.getValore());
         }
-        // Controllo in base al tipo di vincolo
+
         switch (tipoVincolo) {
             case SOMMA:
                 return verificaSomma(valori);
@@ -86,7 +86,7 @@ public class Blocco  {
 
     private boolean verificaDifferenza(List<Integer> valori) {
         if (valori.size() != 2) {
-            return false; // Differenza valida solo per due valori
+            return false; // Differenza valida solo per due valori (si può migliorare)
         }
         int diff = Math.abs(valori.get(0) - valori.get(1));
         return diff == risultatoVincolo;
@@ -94,7 +94,7 @@ public class Blocco  {
 
     private boolean verificaDivisione(List<Integer> valori) {
         if (valori.size() != 2) {
-            return false; // Divisione valida solo per due valori
+            return false; // Divisione valida solo per due valori (si può migliorare)
         }
         int max = Math.max(valori.get(0), valori.get(1));
         int min = Math.min(valori.get(0), valori.get(1));

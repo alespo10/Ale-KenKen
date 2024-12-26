@@ -55,7 +55,6 @@ public class Controller {
         grafica.setUndoListener(e -> historyHandler.undo());
         grafica.setRedoListener(e -> historyHandler.redo());
 
-
         grafica.setCellaModificaListener((x, y, nuovoValore) -> {
             Casella casella = griglia.getCella(x, y);
 
@@ -131,6 +130,7 @@ public class Controller {
         });
         aggiornaStatoPulsanti();
     }
+
 
 
     private boolean confrontaSoluzione(int[][] valoriUtente, int[][] soluzione) {
