@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Aggiunta visualizzazione soluzioni (correggere problema caricamento partita)">
-      <change afterPath="$PROJECT_DIR$/src/Test/BloccoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/CasellaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/GrigliaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/SoluzioneTest.java" afterDir="false" />
+    <list default="true" id="55129bdf-18de-471b-8914-1eb4d259bf8b" name="Changes" comment="Prova test (da completare)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ale-KenKen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ale-KenKen.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Blocco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Blocco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Casella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Casella.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Soluzione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Soluzione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SoluzioneAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SoluzioneAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/HistoryCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/HistoryCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Griglia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Griglia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Grafica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +44,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.BloccoTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.GrigliaTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.SoluzioneTest.executor&quot;: &quot;Run&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
@@ -78,6 +72,28 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Command" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BloccoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ale-KenKen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.BloccoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BloccoTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,6 +128,19 @@
       <workItem from="1735037406309" duration="1724000" />
       <workItem from="1735039145390" duration="14000" />
       <workItem from="1735056055362" duration="444000" />
+      <workItem from="1735232521771" duration="155000" />
+      <workItem from="1735232693418" duration="67000" />
+      <workItem from="1735233333728" duration="112000" />
+      <workItem from="1735233484534" duration="34000" />
+      <workItem from="1735594496296" duration="569000" />
+      <workItem from="1737736880834" duration="117000" />
+      <workItem from="1737738050082" duration="557000" />
+      <workItem from="1737883093692" duration="1288000" />
+      <workItem from="1737899958741" duration="488000" />
+      <workItem from="1737998669875" duration="1436000" />
+      <workItem from="1738165497016" duration="8000" />
+      <workItem from="1738169774792" duration="1124000" />
+      <workItem from="1738336280665" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="Caricamento">
       <option name="closed" value="true" />
@@ -225,7 +254,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734518018461</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Prova test (da completare)">
+      <option name="closed" value="true" />
+      <created>1735232659013</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1735232659013</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Prova test (da completare)">
+      <option name="closed" value="true" />
+      <created>1735232670219</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1735232670219</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +289,7 @@
     <MESSAGE value="Implementazione pattern command con il sistema" />
     <MESSAGE value="Non faceva confrontare le soluzioni una volta caricata una vecchia griglia (ora va, ma l'implementazione va rivista)" />
     <MESSAGE value="Aggiunta visualizzazione soluzioni (correggere problema caricamento partita)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta visualizzazione soluzioni (correggere problema caricamento partita)" />
+    <MESSAGE value="Prova test (da completare)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prova test (da completare)" />
   </component>
 </project>

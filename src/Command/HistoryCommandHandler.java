@@ -34,6 +34,7 @@ public class HistoryCommandHandler implements CommandHandler {
 		notifyStateChanged();
 	}
 
+
 	public void redo() {
 		if (!redoList.isEmpty()) {
 			Command redoCmd = redoList.removeFirst();

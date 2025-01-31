@@ -77,12 +77,12 @@ public class Griglia implements Originator{
     public boolean puoiInserire(int x, int y, int numero) {
         // Controlla la riga
         for (int col = 0; col < dimensione; col++) {
-            if (griglia[x][col].getValore() == numero) {
+            if (griglia[x][col].getValore() == numero & numero!= 0) {
                 return false;
             }
         }
         for (int row = 0; row < dimensione; row++) {
-            if (griglia[row][y].getValore() == numero) {
+            if (griglia[row][y].getValore() == numero & numero != 0) {
                 return false;
             }
         }

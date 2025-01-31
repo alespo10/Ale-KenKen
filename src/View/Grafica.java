@@ -142,7 +142,7 @@ public class Grafica extends JFrame {
 
                 if (casella.getValore() != 0) {
                     cella.setText(String.valueOf(casella.getValore()));
-                    cella.setEditable(false);
+                    //cella.setEditable(false);
                 }
 
                 int finalX = x;
@@ -169,32 +169,46 @@ public class Grafica extends JFrame {
                         }
 
                         try {
-                            int nuovoValore = Integer.parseInt(cella.getText());
+                            String input = cella.getText(); // Ottieni il valore dal campo di testo (JTextField)
 
-                            // Verifica se il valore è valido
+                            // Gestione del caso in cui l'input è vuoto o nullo
+                            if (input == null || input.trim().isEmpty()) {
+                                casella.setValore(0); // Imposta il valore della casella come vuoto (0)
+                                if (cellaModificaListener != null) {
+                                    cellaModificaListener.onCellaModifica(finalX, finalY, 0); // Notifica il listener
+                                }
+                                return; // Termina qui per input vuoto
+                            }
+
+                            // Converte l'input in un numero intero
+                            int nuovoValore = Integer.parseInt(input);
+
+                            // Verifica se il valore è valido (deve essere tra 1 e la dimensione della griglia)
                             if (nuovoValore < 1 || nuovoValore > caselle.length) {
                                 JOptionPane.showMessageDialog(null,
                                         "Valore non valido! Inserisci un numero tra 1 e " + caselle.length + ".",
                                         "Errore di inserimento",
                                         JOptionPane.ERROR_MESSAGE);
 
-                                // Ripristina il valore corrente della casella nel campo di testo
+                                // Ripristina il valore precedente della casella
                                 cella.setText(casella.getValore() == 0 ? "" : String.valueOf(casella.getValore()));
-                                return;
+                                return; // Termina per valore non valido
                             }
 
-                            // Notifica il controller della modifica
-                            if (cellaModificaListener != null ) {
+                            // Notifica il listener della modifica (nuovo valore valido)
+                            if (cellaModificaListener != null) {
                                 cellaModificaListener.onCellaModifica(finalX, finalY, nuovoValore);
                             }
                         } catch (NumberFormatException ex) {
+                            // Gestione dell'input non numerico
                             JOptionPane.showMessageDialog(null,
                                     "Inserisci un numero valido.",
                                     "Errore di inserimento",
                                     JOptionPane.ERROR_MESSAGE);
-                            cella.setText(""); // Resetta il campo
+                            cella.setText(""); // Resetta il campo in caso di errore
                         }
                     }
+
 
 
                 });
